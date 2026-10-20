@@ -1,0 +1,751 @@
+/* Company profile PINJEK. Diberi awalan .pf agar tidak bentrok dengan gaya ruang kerja. */
+.pf {
+  --pf-purple: #5b06fa;
+  --pf-mint: #27f2a8;
+  --pf-night: #12002e;
+  --pf-ink: #21004d;
+  --pf-text: #4a4060;
+  --pf-soft: #f6f3ff;
+  color: var(--pf-text);
+  font-size: 16px;
+  background: #fff;
+  overflow-x: clip;
+}
+.pf main.pf-main {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+.pf h1,
+.pf h2,
+.pf h3 {
+  color: var(--pf-ink);
+  letter-spacing: -0.02em;
+}
+.pf h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+.pf h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+.pf p {
+  line-height: 1.7;
+}
+.pf a:focus-visible {
+  outline: 3px solid var(--pf-mint);
+  outline-offset: 3px;
+}
+.pf-wrap {
+  width: min(1160px, 100% - 40px);
+  margin: 0 auto;
+}
+
+/* Navigasi */
+.pf-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #12002ecc;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid #ffffff14;
+}
+.pf-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 68px;
+}
+.pf-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  --logo-purple: #8c5bff;
+}
+.pf-links {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+.pf-links a {
+  color: #d9cffb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.pf-links a:hover {
+  background: #ffffff14;
+  color: #fff;
+}
+
+/* Tombol */
+.pf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+.pf-btn span {
+  transition: transform 0.2s;
+}
+.pf-btn:hover span {
+  transform: translateX(4px);
+}
+.pf-btn-mint {
+  background: var(--pf-mint);
+  color: var(--pf-night);
+  box-shadow: 0 10px 30px #27f2a840;
+}
+.pf-btn-mint:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px #27f2a860;
+}
+.pf-btn-ghost {
+  color: #fff;
+  border: 1.5px solid #ffffff40;
+}
+.pf-btn-ghost:hover {
+  background: #ffffff14;
+}
+.pf-btn-sm {
+  min-height: 40px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+
+/* Hero */
+.pf-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 1px 1px, #ffffff12 1px, transparent 0) 0 0 / 28px
+      28px,
+    linear-gradient(160deg, #1b0442 0%, var(--pf-night) 60%);
+  color: #e6defa;
+  padding: 96px 0 110px;
+}
+.pf-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  animation: pf-drift 16s ease-in-out infinite alternate;
+}
+.pf-blob-a {
+  width: 520px;
+  height: 520px;
+  background: var(--pf-purple);
+  top: -160px;
+  right: -120px;
+}
+.pf-blob-b {
+  width: 360px;
+  height: 360px;
+  background: #18b884;
+  bottom: -200px;
+  left: -80px;
+  opacity: 0.35;
+  animation-delay: -6s;
+}
+.pf-hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+.pf-eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pf-mint);
+  margin: 0 0 18px;
+}
+.pf-eyebrow-dark {
+  color: var(--pf-purple);
+}
+.pf-hero h1 {
+  color: #fff;
+  font-size: clamp(38px, 6vw, 66px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin: 0 0 22px;
+}
+.pf-grad {
+  background: linear-gradient(90deg, var(--pf-mint), #9d7bff, var(--pf-mint));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: pf-shine 6s linear infinite;
+}
+.pf-lead {
+  font-size: 18px;
+  max-width: 540px;
+  color: #cfc5ec;
+  margin: 0 0 32px;
+}
+.pf-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.pf-in {
+  animation: pf-rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d, 0s) both;
+}
+
+/* Logo animasi: badan muncul, pin tertancap, centang tergambar. */
+.pf-hero-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 380px;
+}
+.pf-hero-logo {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 30px 50px #5b06fa80);
+  animation: pf-float 6s ease-in-out 2s infinite;
+}
+.pf-hero-logo .logo-body,
+.pf-final-logo .logo-body {
+  transform-box: fill-box;
+  transform-origin: 50% 60%;
+  animation: pf-pop 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.25) 0.2s both;
+}
+.pf-hero-logo .logo-pins rect {
+  animation: pf-plug 0.5s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+}
+.pf-hero-logo .logo-pins rect:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.pf-hero-logo .logo-pins rect:nth-child(2) {
+  animation-delay: 0.92s;
+}
+.pf-hero-logo .logo-pins rect:nth-child(3) {
+  animation-delay: 1.04s;
+}
+.pf-hero-logo .logo-check {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: pf-draw 0.7s cubic-bezier(0.6, 0, 0.2, 1) 1.25s forwards;
+}
+.pf-ring {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 1.5px dashed #27f2a855;
+  animation: pf-spin 30s linear infinite;
+}
+.pf-ring-2 {
+  width: 250px;
+  height: 250px;
+  border: 1.5px solid #8c5bff40;
+  animation-duration: 22s;
+  animation-direction: reverse;
+}
+.pf-chip {
+  position: absolute;
+  z-index: 3;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #ffffff14;
+  border: 1px solid #ffffff26;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  animation:
+    pf-rise 0.7s ease both,
+    pf-float 5s ease-in-out infinite;
+}
+.pf-chip-a {
+  top: 12%;
+  left: 0;
+  animation-delay: 1.6s, 2.3s;
+}
+.pf-chip-b {
+  top: 46%;
+  right: -4%;
+  animation-delay: 1.8s, 3s;
+}
+.pf-chip-c {
+  bottom: 6%;
+  left: 8%;
+  animation-delay: 2s, 2.6s;
+}
+
+/* Marquee */
+.pf-marquee {
+  background: var(--pf-mint);
+  color: var(--pf-night);
+  overflow: hidden;
+  padding: 16px 0;
+  transform: rotate(-1deg) scale(1.02);
+  margin-top: -14px;
+  position: relative;
+  z-index: 2;
+}
+.pf-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: pf-marquee 28s linear infinite;
+}
+.pf-marquee:hover .pf-marquee-track {
+  animation-play-state: paused;
+}
+.pf-marquee ul {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0 20px;
+  list-style: none;
+}
+.pf-marquee li {
+  font-weight: 800;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+/* Bagian umum */
+.pf-section {
+  padding: 110px 0;
+}
+.pf-soft {
+  background: var(--pf-soft);
+}
+.pf-head {
+  max-width: 640px;
+  margin-bottom: 52px;
+}
+.pf-hl {
+  color: var(--pf-purple);
+}
+.pf-about {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.pf-problems {
+  display: grid;
+  gap: 16px;
+}
+.pf-problem {
+  display: flex;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid #ece6fb;
+  background: #fff;
+  box-shadow: 0 10px 30px #21004d0d;
+}
+.pf-problem p {
+  margin: 0;
+}
+.pf-problem-n {
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--pf-purple);
+  min-width: 34px;
+}
+
+/* Langkah */
+.pf-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  position: relative;
+}
+.pf-steps::before {
+  content: "";
+  position: absolute;
+  top: 27px;
+  left: 28px;
+  right: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pf-purple), var(--pf-mint));
+  transform-origin: left;
+  transition: transform 1.4s cubic-bezier(0.6, 0, 0.2, 1) 0.3s;
+}
+.pf-anim .pf-steps:not(:has(li.in))::before {
+  transform: scaleX(0);
+}
+.pf-steps li {
+  position: relative;
+}
+.pf-step-n {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--pf-purple);
+  color: #fff;
+  font-weight: 900;
+  font-size: 22px;
+  margin-bottom: 22px;
+  box-shadow:
+    0 0 0 6px var(--pf-soft),
+    0 12px 24px #5b06fa40;
+}
+.pf-steps li:nth-child(even) .pf-step-n {
+  background: var(--pf-mint);
+  color: var(--pf-night);
+}
+.pf-steps p {
+  margin: 0;
+}
+
+/* Keunggulan */
+.pf-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.pf-feature {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #ece6fb;
+  background: #fff;
+  overflow: hidden;
+}
+.pf-feature::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  bottom: -100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(#27f2a830, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.pf-feature:hover {
+  border-color: #c9b5ff;
+  box-shadow: 0 24px 50px #21004d1a;
+}
+.pf-feature:hover::after {
+  opacity: 1;
+}
+.pf-feature p {
+  margin: 0;
+}
+.pf-icon {
+  width: 48px;
+  height: 48px;
+  padding: 11px;
+  border-radius: 14px;
+  background: #f1ecff;
+  color: var(--pf-purple);
+  margin-bottom: 20px;
+  transition:
+    transform 0.3s,
+    background 0.3s,
+    color 0.3s;
+}
+.pf-feature:hover .pf-icon {
+  transform: rotate(-8deg) scale(1.08);
+  background: var(--pf-purple);
+  color: #fff;
+}
+
+/* Angka */
+.pf-numbers {
+  background: linear-gradient(
+    135deg,
+    var(--pf-purple),
+    #3a00a8 60%,
+    var(--pf-night)
+  );
+  color: #e6defa;
+  padding: 80px 0;
+}
+.pf-numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+.pf-number {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.pf-number small {
+  font-size: 0.5em;
+  color: var(--pf-mint);
+  margin-left: 4px;
+}
+.pf-numbers p {
+  margin: 6px 0 0;
+  color: #e0d8fa;
+}
+
+/* Visi */
+.pf-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+.pf-values {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.pf-values li {
+  padding: 18px 20px 18px 54px;
+  border-radius: 14px;
+  background: var(--pf-soft);
+  position: relative;
+  line-height: 1.6;
+}
+.pf-values li::before {
+  content: "✓";
+  position: absolute;
+  left: 18px;
+  top: 17px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--pf-mint);
+  color: var(--pf-night);
+  font-weight: 900;
+  font-size: 13px;
+}
+.pf-values b {
+  color: var(--pf-ink);
+}
+
+/* Penutup */
+.pf-final {
+  padding-top: 0;
+}
+.pf-final-card {
+  text-align: center;
+  padding: 64px 28px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 20% 0%, #5b06fa66, transparent 50%),
+    radial-gradient(circle at 90% 100%, #27f2a833, transparent 45%),
+    var(--pf-night);
+  color: #cfc5ec;
+}
+.pf-final-card h2 {
+  color: #fff;
+}
+.pf-final-card p {
+  max-width: 520px;
+  margin: 0 auto 30px;
+}
+.pf-final-logo {
+  --logo-purple: #8c5bff;
+  margin-bottom: 18px;
+}
+
+/* Footer */
+.pf-footer {
+  border-top: 1px solid #ece6fb;
+  padding: 40px 0;
+  font-size: 14px;
+}
+.pf-footer-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+}
+.pf-footer-logo {
+  width: 92px;
+  height: auto;
+}
+.pf-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.pf-footer-links a {
+  color: var(--pf-ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+.pf-footer-links a:hover {
+  color: var(--pf-purple);
+}
+.pf-footer p {
+  margin: 0 0 0 auto;
+}
+
+/* Muncul saat digulir (hanya aktif jika JS & motion diizinkan). */
+[data-reveal] {
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d, 0s),
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d, 0s);
+}
+.pf-anim [data-reveal]:not(.in) {
+  opacity: 0;
+  transform: translateY(32px);
+}
+.pf-anim [data-reveal].in.pf-feature:hover,
+.pf-feature:hover {
+  transform: translateY(-6px);
+  transition-delay: 0s;
+}
+
+@keyframes pf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+@keyframes pf-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.4) rotate(-12deg);
+  }
+}
+@keyframes pf-plug {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+}
+@keyframes pf-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes pf-float {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes pf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pf-drift {
+  to {
+    transform: translate(-60px, 40px) scale(1.15);
+  }
+}
+@keyframes pf-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes pf-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 960px) {
+  .pf-hero-grid,
+  .pf-about,
+  .pf-vision {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pf-hero {
+    padding: 64px 0 90px;
+  }
+  .pf-hero-art {
+    min-height: 320px;
+  }
+  .pf-steps,
+  .pf-features,
+  .pf-numbers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pf-steps::before {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  .pf-links {
+    display: none;
+  }
+  .pf-nav-inner {
+    justify-content: space-between;
+  }
+  .pf-section {
+    padding: 72px 0;
+  }
+  .pf-steps,
+  .pf-features {
+    grid-template-columns: 1fr;
+  }
+  .pf-hero-logo {
+    width: 170px;
+    height: auto;
+  }
+  .pf-ring {
+    width: 250px;
+    height: 250px;
+  }
+  .pf-ring-2 {
+    width: 185px;
+    height: 185px;
+  }
+  .pf-chip {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  .pf-chip-b {
+    right: 0;
+  }
+  .pf-cta .pf-btn {
+    flex: 1 1 100%;
+  }
+  .pf-footer p {
+    margin: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pf *,
+  .pf *::before {
+    animation: none !important;
+  }
+  .pf-hero-logo .logo-check {
+    stroke-dashoffset: 0;
+  }
+}
